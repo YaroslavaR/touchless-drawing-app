@@ -75,5 +75,8 @@ namespace TouchlessDemo
         private Graphics _canvasGFX;
         private Point _p1, _p2;
         private Pen _pen;
+
+        public Bitmap Canvas { get => _canvas; set => _canvas = value; }
+        public Graphics CanvasGFX { get => _canvasGFX; set => _canvasGFX = value; }
     }
 }

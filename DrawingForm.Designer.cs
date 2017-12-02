@@ -63,6 +63,7 @@ namespace TouchlessDemo
             this.buttonMarkerRemove = new System.Windows.Forms.Button();
             this.groupBoxMarkers = new System.Windows.Forms.GroupBox();
             this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
+            this.buttonSaveImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisplay)).BeginInit();
             this.groupBoxDemo.SuspendLayout();
             this.groupBoxCameraInfo.SuspendLayout();
@@ -109,10 +110,10 @@ namespace TouchlessDemo
             this.radioButtonMarkers.Enabled = false;
             this.radioButtonMarkers.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonMarkers.ForeColor = System.Drawing.Color.White;
-            this.radioButtonMarkers.Location = new System.Drawing.Point(90, 46);
+            this.radioButtonMarkers.Location = new System.Drawing.Point(107, 45);
             this.radioButtonMarkers.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonMarkers.Name = "radioButtonMarkers";
-            this.radioButtonMarkers.Size = new System.Drawing.Size(206, 71);
+            this.radioButtonMarkers.Size = new System.Drawing.Size(227, 71);
             this.radioButtonMarkers.TabIndex = 22;
             this.radioButtonMarkers.Text = "Markers";
             this.radioButtonMarkers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,7 +128,7 @@ namespace TouchlessDemo
             this.radioButtonDemo.Enabled = false;
             this.radioButtonDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.radioButtonDemo.ForeColor = System.Drawing.Color.White;
-            this.radioButtonDemo.Location = new System.Drawing.Point(308, 46);
+            this.radioButtonDemo.Location = new System.Drawing.Point(107, 43);
             this.radioButtonDemo.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonDemo.Name = "radioButtonDemo";
             this.radioButtonDemo.Size = new System.Drawing.Size(330, 71);
@@ -211,7 +212,7 @@ namespace TouchlessDemo
             this.buttonDrawDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(232)))), ((int)(((byte)(134)))));
             this.buttonDrawDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDrawDemo.ForeColor = System.Drawing.Color.White;
-            this.buttonDrawDemo.Location = new System.Drawing.Point(308, 48);
+            this.buttonDrawDemo.Location = new System.Drawing.Point(346, 43);
             this.buttonDrawDemo.Margin = new System.Windows.Forms.Padding(6);
             this.buttonDrawDemo.Name = "buttonDrawDemo";
             this.buttonDrawDemo.Size = new System.Drawing.Size(300, 71);
@@ -403,7 +404,7 @@ namespace TouchlessDemo
             this.buttonMarkerAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(232)))), ((int)(((byte)(134)))));
             this.buttonMarkerAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMarkerAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonMarkerAdd.Location = new System.Drawing.Point(650, 43);
+            this.buttonMarkerAdd.Location = new System.Drawing.Point(466, 41);
             this.buttonMarkerAdd.Margin = new System.Windows.Forms.Padding(6);
             this.buttonMarkerAdd.Name = "buttonMarkerAdd";
             this.buttonMarkerAdd.Size = new System.Drawing.Size(337, 71);
@@ -419,7 +420,7 @@ namespace TouchlessDemo
             this.comboBoxMarkers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMarkers.ForeColor = System.Drawing.Color.White;
             this.comboBoxMarkers.FormattingEnabled = true;
-            this.comboBoxMarkers.Location = new System.Drawing.Point(999, 60);
+            this.comboBoxMarkers.Location = new System.Drawing.Point(831, 60);
             this.comboBoxMarkers.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxMarkers.Name = "comboBoxMarkers";
             this.comboBoxMarkers.Size = new System.Drawing.Size(325, 39);
@@ -513,7 +514,7 @@ namespace TouchlessDemo
             this.buttonMarkerRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(232)))), ((int)(((byte)(134)))));
             this.buttonMarkerRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonMarkerRemove.ForeColor = System.Drawing.Color.White;
-            this.buttonMarkerRemove.Location = new System.Drawing.Point(1336, 43);
+            this.buttonMarkerRemove.Location = new System.Drawing.Point(1189, 43);
             this.buttonMarkerRemove.Margin = new System.Windows.Forms.Padding(6);
             this.buttonMarkerRemove.Name = "buttonMarkerRemove";
             this.buttonMarkerRemove.Size = new System.Drawing.Size(337, 71);
@@ -545,6 +546,20 @@ namespace TouchlessDemo
             this.pictureBoxBackground.TabIndex = 32;
             this.pictureBoxBackground.TabStop = false;
             // 
+            // buttonSaveImage
+            // 
+            this.buttonSaveImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(123)))), ((int)(((byte)(232)))));
+            this.buttonSaveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold);
+            this.buttonSaveImage.ForeColor = System.Drawing.Color.White;
+            this.buttonSaveImage.Location = new System.Drawing.Point(679, 41);
+            this.buttonSaveImage.Name = "buttonSaveImage";
+            this.buttonSaveImage.Size = new System.Drawing.Size(167, 71);
+            this.buttonSaveImage.TabIndex = 33;
+            this.buttonSaveImage.Text = "Save";
+            this.buttonSaveImage.UseVisualStyleBackColor = false;
+            this.buttonSaveImage.Visible = false;
+            this.buttonSaveImage.Click += new System.EventHandler(this.buttonSaveImage_Click);
+            // 
             // DrawingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -552,6 +567,7 @@ namespace TouchlessDemo
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(203)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(2104, 1438);
+            this.Controls.Add(this.buttonSaveImage);
             this.Controls.Add(this.pictureBoxDisplay);
             this.Controls.Add(this.pictureBoxBackground);
             this.Controls.Add(this.button1);
@@ -627,6 +643,7 @@ namespace TouchlessDemo
         private System.Windows.Forms.Button buttonMarkerRemove;
         private System.Windows.Forms.GroupBox groupBoxMarkers;
         private System.Windows.Forms.PictureBox pictureBoxBackground;
+        private System.Windows.Forms.Button buttonSaveImage;
     }
 }
 

@@ -98,6 +98,7 @@ namespace TouchlessDemo
                 buttonMarkerAdd.Visible = true;
                 buttonMarkerRemove.Visible = true;
                 comboBoxMarkers.Visible = true;
+                radioButtonMarkers.Visible = false;
                 if (comboBoxMarkers.Items.Count != 0)
                     radioButtonDemo.Visible = true;
                 buttonDrawDemo.Visible = false;
@@ -338,6 +339,7 @@ namespace TouchlessDemo
             if (_drawDemo == null)
             {
                 _drawDemo = new DrawDemo(_touchlessMgr, pictureBoxDisplay.Bounds);
+                buttonSaveImage.Visible = true;
                 buttonDrawDemo.Text = "Stop Drawing";
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = false;
                 labelDemoInstructions.Enabled = true;
@@ -362,6 +364,7 @@ namespace TouchlessDemo
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = true;
                 labelDemoInstructions.Enabled = false;
                 labelDemoInstructions.Text = "";
+                buttonSaveImage.Visible = false;
             }
         }
 
@@ -726,6 +729,28 @@ namespace TouchlessDemo
             //DrawingForm df = new DrawingForm();
             //df.Show();
             this.Hide();
+        }
+
+        private void buttonSaveImage_Click(object sender, EventArgs e)
+        {
+            Bitmap camera_screen = _touchlessMgr.CurrentCamera.GetCurrentImage();
+            Bitmap canvas = _drawDemo.Canvas;
+
+            using (Graphics grfx = Graphics.FromImage(camera_screen))
+            {
+                grfx.DrawImage(canvas, 0, 0);
+            }
+
+            string path = @"C:\DrawingApplication\";
+
+            DateTime currentDate = DateTime.Now;
+            DateTime dateOnly = currentDate.Date;
+            System.IO.DirectoryInfo di = System.IO.Directory.CreateDirectory(path);
+            Debug.WriteLine(dateOnly.ToString("ddMMyyyy"));
+            System.IO.DirectoryInfo di2 = System.IO.Directory.CreateDirectory(path + dateOnly.ToString("ddMMyyyy"));
+
+            camera_screen.Save(path + dateOnly.ToString("ddMMyyyy") + "\\" + currentDate.ToString("HHmmss") + ".jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
+            System.Windows.Forms.MessageBox.Show("Your image has been saved as " + path + dateOnly.ToString("ddMMyyyy") + "\\" + currentDate.ToString("HHmmss") + ".jpeg");
         }
     }
 }
