@@ -23,11 +23,11 @@ using System.Diagnostics;
 
 namespace TouchlessDemo
 {
-    public partial class TouchlessDemo : Form
+    public partial class DrawingForm : Form
     {
         #region Touchless Demo Management
 
-        public TouchlessDemo()
+        public DrawingForm()
         {
             InitializeComponent();
         }
@@ -701,9 +701,6 @@ namespace TouchlessDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _touchlessMgr.CurrentCamera.OnImageCaptured -= new EventHandler<CameraEventArgs>(OnImageCaptured);
-            _touchlessMgr.CurrentCamera.Dispose();
-            _touchlessMgr.CurrentCamera = null;
             DrawingForm df = new DrawingForm();
             df.Show();
             this.Hide();

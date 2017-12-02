@@ -1,6 +1,6 @@
 namespace TouchlessDemo
 {
-    partial class TouchlessDemo
+    partial class DrawingForm
     {
         /// <summary>
         /// Required designer variable.
