@@ -704,6 +704,8 @@ namespace TouchlessDemo
             _touchlessMgr.CurrentCamera.OnImageCaptured -= new EventHandler<CameraEventArgs>(OnImageCaptured);
             _touchlessMgr.CurrentCamera.Dispose();
             _touchlessMgr.CurrentCamera = null;
+            pictureBoxDisplay.Dispose();
+            
             DrawingForm df = new DrawingForm();
             df.Show();
             this.Hide();

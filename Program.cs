@@ -14,7 +14,7 @@ namespace TouchlessDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TouchlessDemo());
+            Application.Run(new DrawingForm());
         }
     }
 }

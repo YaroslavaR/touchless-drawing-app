@@ -30,6 +30,7 @@ namespace TouchlessDemo
         public DrawingForm()
         {
             InitializeComponent();
+            //_touchlessMgr = mgr;
         }
 
         private void TouchlessDemo_Load(object sender, EventArgs e)
@@ -94,6 +95,12 @@ namespace TouchlessDemo
             // Set or unset the picturebox mouse interaction handlers
             if (radioButtonMarkers.Checked)
             {
+                buttonMarkerAdd.Visible = true;
+                buttonMarkerRemove.Visible = true;
+                comboBoxMarkers.Visible = true;
+                if (comboBoxMarkers.Items.Count != 0)
+                    radioButtonDemo.Visible = true;
+                buttonDrawDemo.Visible = false;
                 pictureBoxDisplay.MouseDown += new MouseEventHandler(pictureBoxDisplay_MouseDown);
                 pictureBoxDisplay.MouseMove += new MouseEventHandler(pictureBoxDisplay_MouseMove);
                 pictureBoxDisplay.MouseUp += new MouseEventHandler(pictureBoxDisplay_MouseUp);
@@ -103,6 +110,19 @@ namespace TouchlessDemo
                 pictureBoxDisplay.MouseDown -= new MouseEventHandler(pictureBoxDisplay_MouseDown);
                 pictureBoxDisplay.MouseMove -= new MouseEventHandler(pictureBoxDisplay_MouseMove);
                 pictureBoxDisplay.MouseUp -= new MouseEventHandler(pictureBoxDisplay_MouseUp);
+            }
+
+            if (radioButtonDemo.Checked)
+            {
+                
+                radioButtonDemo.Visible = false;
+                radioButtonMarkers.Visible = true;
+                buttonDrawDemo.Visible = true;
+                buttonMarkerAdd.Visible = false;
+                buttonMarkerRemove.Visible = false;
+                comboBoxMarkers.Visible = false;
+                //buttonDrawDemo.Click += new System.EventHandler(this.buttonDrawDemo_Click);
+
             }
 
             // Disable any demos running if we aren't on the demo tab (any more)
@@ -318,7 +338,7 @@ namespace TouchlessDemo
             if (_drawDemo == null)
             {
                 _drawDemo = new DrawDemo(_touchlessMgr, pictureBoxDisplay.Bounds);
-                buttonDrawDemo.Text = "Stop Draw Demo";
+                buttonDrawDemo.Text = "Stop Drawing";
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = false;
                 labelDemoInstructions.Enabled = true;
                 labelDemoInstructions.Text = "Drawing Demo Instructions:\n\n"
@@ -338,7 +358,7 @@ namespace TouchlessDemo
             {
                 _drawDemo.Dispose();
                 _drawDemo = null;
-                buttonDrawDemo.Text = "Start Draw Demo";
+                buttonDrawDemo.Text = "Start Drawing";
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = true;
                 labelDemoInstructions.Enabled = false;
                 labelDemoInstructions.Text = "";
@@ -539,6 +559,7 @@ namespace TouchlessDemo
             groupBoxMarkerControl.Text = "No Marker Selected";
             if (comboBoxMarkers.Items.Count == 0)
             {
+                radioButtonDemo.Visible = false;
                 radioButtonDemo.Enabled = false;
                 comboBoxMarkers.Enabled = false;
             }
@@ -585,6 +606,7 @@ namespace TouchlessDemo
                 pictureBoxDisplay.Image = new Bitmap(pictureBoxDisplay.Width, pictureBoxDisplay.Height);
 
                 // Enable the demo and marker editing
+                radioButtonDemo.Visible = true;
                 radioButtonDemo.Enabled = true;
                 buttonNext.Enabled = true;
                 comboBoxMarkers.Enabled = true;
@@ -701,8 +723,8 @@ namespace TouchlessDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DrawingForm df = new DrawingForm();
-            df.Show();
+            //DrawingForm df = new DrawingForm();
+            //df.Show();
             this.Hide();
         }
     }
