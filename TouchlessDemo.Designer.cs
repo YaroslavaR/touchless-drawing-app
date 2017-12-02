@@ -215,7 +215,7 @@ namespace TouchlessDemo
             this.radioButtonMarkers.AutoSize = true;
             this.radioButtonMarkers.Enabled = false;
             this.radioButtonMarkers.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMarkers.Location = new System.Drawing.Point(252, 23);
+            this.radioButtonMarkers.Location = new System.Drawing.Point(36, 23);
             this.radioButtonMarkers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButtonMarkers.Name = "radioButtonMarkers";
             this.radioButtonMarkers.Size = new System.Drawing.Size(199, 69);
@@ -410,6 +410,7 @@ namespace TouchlessDemo
             this.buttonDefendDemo.TabIndex = 23;
             this.buttonDefendDemo.Text = "Start Defend Demo";
             this.buttonDefendDemo.UseVisualStyleBackColor = true;
+            this.buttonDefendDemo.Visible = false;
             this.buttonDefendDemo.Click += new System.EventHandler(this.buttonDefendDemo_Click);
             // 
             // buttonImageDemo
@@ -422,6 +423,7 @@ namespace TouchlessDemo
             this.buttonImageDemo.TabIndex = 22;
             this.buttonImageDemo.Text = "Start Image Demo";
             this.buttonImageDemo.UseVisualStyleBackColor = true;
+            this.buttonImageDemo.Visible = false;
             this.buttonImageDemo.Click += new System.EventHandler(this.buttonImageDemo_Click);
             // 
             // buttonSnakeDemo
@@ -434,6 +436,7 @@ namespace TouchlessDemo
             this.buttonSnakeDemo.TabIndex = 21;
             this.buttonSnakeDemo.Text = "Start Snake Demo";
             this.buttonSnakeDemo.UseVisualStyleBackColor = true;
+            this.buttonSnakeDemo.Visible = false;
             this.buttonSnakeDemo.Click += new System.EventHandler(this.buttonSnakeDemo_Click);
             // 
             // buttonDrawDemo
