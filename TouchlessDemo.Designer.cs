@@ -99,7 +99,7 @@ namespace TouchlessDemo
             this.pictureBoxDisplay.Location = new System.Drawing.Point(676, 113);
             this.pictureBoxDisplay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBoxDisplay.Name = "pictureBoxDisplay";
-            this.pictureBoxDisplay.Size = new System.Drawing.Size(1280, 833);
+            this.pictureBoxDisplay.Size = new System.Drawing.Size(1280, 700);
             this.pictureBoxDisplay.TabIndex = 19;
             this.pictureBoxDisplay.TabStop = false;
             this.pictureBoxDisplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDisplay_MouseDown);
@@ -215,7 +215,7 @@ namespace TouchlessDemo
             this.radioButtonMarkers.AutoSize = true;
             this.radioButtonMarkers.Enabled = false;
             this.radioButtonMarkers.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMarkers.Location = new System.Drawing.Point(36, 23);
+            this.radioButtonMarkers.Location = new System.Drawing.Point(676, 15);
             this.radioButtonMarkers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButtonMarkers.Name = "radioButtonMarkers";
             this.radioButtonMarkers.Size = new System.Drawing.Size(199, 69);
@@ -231,7 +231,7 @@ namespace TouchlessDemo
             this.radioButtonDemo.AutoSize = true;
             this.radioButtonDemo.Enabled = false;
             this.radioButtonDemo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonDemo.Location = new System.Drawing.Point(676, 15);
+            this.radioButtonDemo.Location = new System.Drawing.Point(1802, 23);
             this.radioButtonDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButtonDemo.Name = "radioButtonDemo";
             this.radioButtonDemo.Size = new System.Drawing.Size(154, 69);
@@ -466,7 +466,7 @@ namespace TouchlessDemo
             // 
             this.buttonBack.Enabled = false;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBack.Location = new System.Drawing.Point(352, 875);
+            this.buttonBack.Location = new System.Drawing.Point(676, 859);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(150, 71);
@@ -479,7 +479,7 @@ namespace TouchlessDemo
             // 
             this.buttonNext.Enabled = false;
             this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonNext.Location = new System.Drawing.Point(514, 875);
+            this.buttonNext.Location = new System.Drawing.Point(1802, 859);
             this.buttonNext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(150, 71);
