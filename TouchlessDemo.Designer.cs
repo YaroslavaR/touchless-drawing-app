@@ -96,10 +96,10 @@ namespace TouchlessDemo
             // pictureBoxDisplay
             // 
             this.pictureBoxDisplay.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBoxDisplay.Location = new System.Drawing.Point(676, 23);
+            this.pictureBoxDisplay.Location = new System.Drawing.Point(676, 113);
             this.pictureBoxDisplay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBoxDisplay.Name = "pictureBoxDisplay";
-            this.pictureBoxDisplay.Size = new System.Drawing.Size(1280, 923);
+            this.pictureBoxDisplay.Size = new System.Drawing.Size(1280, 833);
             this.pictureBoxDisplay.TabIndex = 19;
             this.pictureBoxDisplay.TabStop = false;
             this.pictureBoxDisplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDisplay_MouseDown);
@@ -231,7 +231,7 @@ namespace TouchlessDemo
             this.radioButtonDemo.AutoSize = true;
             this.radioButtonDemo.Enabled = false;
             this.radioButtonDemo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonDemo.Location = new System.Drawing.Point(494, 23);
+            this.radioButtonDemo.Location = new System.Drawing.Point(676, 15);
             this.radioButtonDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButtonDemo.Name = "radioButtonDemo";
             this.radioButtonDemo.Size = new System.Drawing.Size(154, 69);
@@ -504,7 +504,8 @@ namespace TouchlessDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1982, 967);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(2014, 967);
             this.Controls.Add(this.linkLabelHomepage);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonBack);
