@@ -72,9 +72,10 @@ namespace TouchlessDemo
             // 
             // buttonCameraProperties
             // 
-            this.buttonCameraProperties.Location = new System.Drawing.Point(9, 19);
+            this.buttonCameraProperties.Location = new System.Drawing.Point(18, 37);
+            this.buttonCameraProperties.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonCameraProperties.Name = "buttonCameraProperties";
-            this.buttonCameraProperties.Size = new System.Drawing.Size(137, 23);
+            this.buttonCameraProperties.Size = new System.Drawing.Size(274, 44);
             this.buttonCameraProperties.TabIndex = 17;
             this.buttonCameraProperties.Text = "Adjust Camera Properties";
             this.buttonCameraProperties.UseVisualStyleBackColor = true;
@@ -83,33 +84,37 @@ namespace TouchlessDemo
             // comboBoxCameras
             // 
             this.comboBoxCameras.FormattingEnabled = true;
-            this.comboBoxCameras.Location = new System.Drawing.Point(10, 19);
+            this.comboBoxCameras.Location = new System.Drawing.Point(20, 37);
+            this.comboBoxCameras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxCameras.Name = "comboBoxCameras";
-            this.comboBoxCameras.Size = new System.Drawing.Size(304, 21);
+            this.comboBoxCameras.Size = new System.Drawing.Size(604, 33);
             this.comboBoxCameras.TabIndex = 14;
             this.comboBoxCameras.Text = "Select A Camera";
-            this.comboBoxCameras.SelectedIndexChanged += new System.EventHandler(this.comboBoxCameras_SelectedIndexChanged);
             this.comboBoxCameras.DropDown += new System.EventHandler(this.comboBoxCameras_DropDown);
+            this.comboBoxCameras.SelectedIndexChanged += new System.EventHandler(this.comboBoxCameras_SelectedIndexChanged);
             // 
             // pictureBoxDisplay
             // 
             this.pictureBoxDisplay.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBoxDisplay.Location = new System.Drawing.Point(338, 12);
+            this.pictureBoxDisplay.Location = new System.Drawing.Point(676, 23);
+            this.pictureBoxDisplay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBoxDisplay.Name = "pictureBoxDisplay";
-            this.pictureBoxDisplay.Size = new System.Drawing.Size(640, 480);
+            this.pictureBoxDisplay.Size = new System.Drawing.Size(1280, 923);
             this.pictureBoxDisplay.TabIndex = 19;
             this.pictureBoxDisplay.TabStop = false;
-            this.pictureBoxDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDisplay_MouseMove);
             this.pictureBoxDisplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDisplay_MouseDown);
+            this.pictureBoxDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDisplay_MouseMove);
             this.pictureBoxDisplay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDisplay_MouseUp);
             // 
             // groupBoxCamera
             // 
             this.groupBoxCamera.Controls.Add(this.groupBoxCameraInfo);
             this.groupBoxCamera.Controls.Add(this.comboBoxCameras);
-            this.groupBoxCamera.Location = new System.Drawing.Point(12, 59);
+            this.groupBoxCamera.Location = new System.Drawing.Point(24, 113);
+            this.groupBoxCamera.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBoxCamera.Name = "groupBoxCamera";
-            this.groupBoxCamera.Size = new System.Drawing.Size(320, 390);
+            this.groupBoxCamera.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBoxCamera.Size = new System.Drawing.Size(640, 750);
             this.groupBoxCamera.TabIndex = 20;
             this.groupBoxCamera.TabStop = false;
             this.groupBoxCamera.Text = "Camera Settings";
@@ -122,9 +127,11 @@ namespace TouchlessDemo
             this.groupBoxCameraInfo.Controls.Add(this.labelCameraFPS);
             this.groupBoxCameraInfo.Controls.Add(this.buttonCameraProperties);
             this.groupBoxCameraInfo.Enabled = false;
-            this.groupBoxCameraInfo.Location = new System.Drawing.Point(9, 48);
+            this.groupBoxCameraInfo.Location = new System.Drawing.Point(18, 92);
+            this.groupBoxCameraInfo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBoxCameraInfo.Name = "groupBoxCameraInfo";
-            this.groupBoxCameraInfo.Size = new System.Drawing.Size(305, 99);
+            this.groupBoxCameraInfo.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBoxCameraInfo.Size = new System.Drawing.Size(610, 190);
             this.groupBoxCameraInfo.TabIndex = 20;
             this.groupBoxCameraInfo.TabStop = false;
             this.groupBoxCameraInfo.Text = "No Camera Selected";
@@ -132,9 +139,10 @@ namespace TouchlessDemo
             // checkBoxCameraFPSLimit
             // 
             this.checkBoxCameraFPSLimit.AutoSize = true;
-            this.checkBoxCameraFPSLimit.Location = new System.Drawing.Point(9, 70);
+            this.checkBoxCameraFPSLimit.Location = new System.Drawing.Point(18, 135);
+            this.checkBoxCameraFPSLimit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBoxCameraFPSLimit.Name = "checkBoxCameraFPSLimit";
-            this.checkBoxCameraFPSLimit.Size = new System.Drawing.Size(143, 17);
+            this.checkBoxCameraFPSLimit.Size = new System.Drawing.Size(285, 29);
             this.checkBoxCameraFPSLimit.TabIndex = 21;
             this.checkBoxCameraFPSLimit.Text = "Limit Frames Per Second";
             this.checkBoxCameraFPSLimit.UseVisualStyleBackColor = true;
@@ -143,9 +151,10 @@ namespace TouchlessDemo
             // labelCameraFPSValue
             // 
             this.labelCameraFPSValue.AutoSize = true;
-            this.labelCameraFPSValue.Location = new System.Drawing.Point(153, 49);
+            this.labelCameraFPSValue.Location = new System.Drawing.Point(306, 94);
+            this.labelCameraFPSValue.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelCameraFPSValue.Name = "labelCameraFPSValue";
-            this.labelCameraFPSValue.Size = new System.Drawing.Size(28, 13);
+            this.labelCameraFPSValue.Size = new System.Drawing.Size(54, 25);
             this.labelCameraFPSValue.TabIndex = 20;
             this.labelCameraFPSValue.Text = "0.00";
             // 
@@ -157,14 +166,15 @@ namespace TouchlessDemo
             0,
             0,
             0});
-            this.numericUpDownCameraFPSLimit.Location = new System.Drawing.Point(156, 68);
+            this.numericUpDownCameraFPSLimit.Location = new System.Drawing.Point(312, 131);
+            this.numericUpDownCameraFPSLimit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDownCameraFPSLimit.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.numericUpDownCameraFPSLimit.Name = "numericUpDownCameraFPSLimit";
-            this.numericUpDownCameraFPSLimit.Size = new System.Drawing.Size(50, 20);
+            this.numericUpDownCameraFPSLimit.Size = new System.Drawing.Size(100, 31);
             this.numericUpDownCameraFPSLimit.TabIndex = 19;
             this.numericUpDownCameraFPSLimit.Value = new decimal(new int[] {
             30,
@@ -177,24 +187,26 @@ namespace TouchlessDemo
             // labelCameraFPS
             // 
             this.labelCameraFPS.AutoSize = true;
-            this.labelCameraFPS.Location = new System.Drawing.Point(6, 49);
+            this.labelCameraFPS.Location = new System.Drawing.Point(12, 94);
+            this.labelCameraFPS.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelCameraFPS.Name = "labelCameraFPS";
-            this.labelCameraFPS.Size = new System.Drawing.Size(140, 13);
+            this.labelCameraFPS.Size = new System.Drawing.Size(285, 25);
             this.labelCameraFPS.TabIndex = 0;
             this.labelCameraFPS.Text = "Current Frames Per Second:";
             // 
             // radioButtonCamera
             // 
             this.radioButtonCamera.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButtonCamera.AutoSize = true;
             this.radioButtonCamera.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCamera.Location = new System.Drawing.Point(12, 12);
+            this.radioButtonCamera.Location = new System.Drawing.Point(24, 23);
+            this.radioButtonCamera.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButtonCamera.Name = "radioButtonCamera";
-            this.radioButtonCamera.Size = new System.Drawing.Size(100, 39);
+            this.radioButtonCamera.Size = new System.Drawing.Size(1, 1);
             this.radioButtonCamera.TabIndex = 21;
             this.radioButtonCamera.TabStop = true;
             this.radioButtonCamera.Text = "Camera";
             this.radioButtonCamera.UseVisualStyleBackColor = true;
+            this.radioButtonCamera.Visible = false;
             this.radioButtonCamera.CheckedChanged += new System.EventHandler(this.radioButtonMode_CheckedChanged);
             // 
             // radioButtonMarkers
@@ -203,9 +215,10 @@ namespace TouchlessDemo
             this.radioButtonMarkers.AutoSize = true;
             this.radioButtonMarkers.Enabled = false;
             this.radioButtonMarkers.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMarkers.Location = new System.Drawing.Point(126, 12);
+            this.radioButtonMarkers.Location = new System.Drawing.Point(252, 23);
+            this.radioButtonMarkers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButtonMarkers.Name = "radioButtonMarkers";
-            this.radioButtonMarkers.Size = new System.Drawing.Size(107, 39);
+            this.radioButtonMarkers.Size = new System.Drawing.Size(199, 69);
             this.radioButtonMarkers.TabIndex = 22;
             this.radioButtonMarkers.TabStop = true;
             this.radioButtonMarkers.Text = "Markers";
@@ -218,9 +231,10 @@ namespace TouchlessDemo
             this.radioButtonDemo.AutoSize = true;
             this.radioButtonDemo.Enabled = false;
             this.radioButtonDemo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonDemo.Location = new System.Drawing.Point(247, 12);
+            this.radioButtonDemo.Location = new System.Drawing.Point(494, 23);
+            this.radioButtonDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButtonDemo.Name = "radioButtonDemo";
-            this.radioButtonDemo.Size = new System.Drawing.Size(83, 39);
+            this.radioButtonDemo.Size = new System.Drawing.Size(154, 69);
             this.radioButtonDemo.TabIndex = 23;
             this.radioButtonDemo.TabStop = true;
             this.radioButtonDemo.Text = "Demo";
@@ -232,9 +246,11 @@ namespace TouchlessDemo
             this.groupBoxMarkers.Controls.Add(this.groupBoxMarkerControl);
             this.groupBoxMarkers.Controls.Add(this.comboBoxMarkers);
             this.groupBoxMarkers.Controls.Add(this.buttonMarkerAdd);
-            this.groupBoxMarkers.Location = new System.Drawing.Point(12, 59);
+            this.groupBoxMarkers.Location = new System.Drawing.Point(24, 113);
+            this.groupBoxMarkers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBoxMarkers.Name = "groupBoxMarkers";
-            this.groupBoxMarkers.Size = new System.Drawing.Size(320, 390);
+            this.groupBoxMarkers.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBoxMarkers.Size = new System.Drawing.Size(640, 750);
             this.groupBoxMarkers.TabIndex = 21;
             this.groupBoxMarkers.TabStop = false;
             this.groupBoxMarkers.Text = "Marker Settings";
@@ -248,32 +264,36 @@ namespace TouchlessDemo
             this.groupBoxMarkerControl.Controls.Add(this.labelMarkerData);
             this.groupBoxMarkerControl.Controls.Add(this.buttonMarkerRemove);
             this.groupBoxMarkerControl.Enabled = false;
-            this.groupBoxMarkerControl.Location = new System.Drawing.Point(10, 48);
+            this.groupBoxMarkerControl.Location = new System.Drawing.Point(20, 92);
+            this.groupBoxMarkerControl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBoxMarkerControl.Name = "groupBoxMarkerControl";
-            this.groupBoxMarkerControl.Size = new System.Drawing.Size(304, 216);
+            this.groupBoxMarkerControl.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBoxMarkerControl.Size = new System.Drawing.Size(608, 415);
             this.groupBoxMarkerControl.TabIndex = 25;
             this.groupBoxMarkerControl.TabStop = false;
             this.groupBoxMarkerControl.Text = "No Marker Selected";
             // 
             // numericUpDownMarkerThresh
             // 
-            this.numericUpDownMarkerThresh.Location = new System.Drawing.Point(251, 44);
+            this.numericUpDownMarkerThresh.Location = new System.Drawing.Point(502, 85);
+            this.numericUpDownMarkerThresh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDownMarkerThresh.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.numericUpDownMarkerThresh.Name = "numericUpDownMarkerThresh";
-            this.numericUpDownMarkerThresh.Size = new System.Drawing.Size(47, 20);
+            this.numericUpDownMarkerThresh.Size = new System.Drawing.Size(94, 31);
             this.numericUpDownMarkerThresh.TabIndex = 5;
             this.numericUpDownMarkerThresh.ValueChanged += new System.EventHandler(this.numericUpDownMarkerThresh_ValueChanged);
             // 
             // labelMarkerThresh
             // 
             this.labelMarkerThresh.AutoSize = true;
-            this.labelMarkerThresh.Location = new System.Drawing.Point(152, 46);
+            this.labelMarkerThresh.Location = new System.Drawing.Point(304, 88);
+            this.labelMarkerThresh.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelMarkerThresh.Name = "labelMarkerThresh";
-            this.labelMarkerThresh.Size = new System.Drawing.Size(93, 13);
+            this.labelMarkerThresh.Size = new System.Drawing.Size(187, 25);
             this.labelMarkerThresh.TabIndex = 4;
             this.labelMarkerThresh.Text = "Marker Threshold:";
             // 
@@ -282,9 +302,10 @@ namespace TouchlessDemo
             this.checkBoxMarkerSmoothing.AutoSize = true;
             this.checkBoxMarkerSmoothing.Checked = true;
             this.checkBoxMarkerSmoothing.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxMarkerSmoothing.Location = new System.Drawing.Point(6, 45);
+            this.checkBoxMarkerSmoothing.Location = new System.Drawing.Point(12, 87);
+            this.checkBoxMarkerSmoothing.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBoxMarkerSmoothing.Name = "checkBoxMarkerSmoothing";
-            this.checkBoxMarkerSmoothing.Size = new System.Drawing.Size(124, 17);
+            this.checkBoxMarkerSmoothing.Size = new System.Drawing.Size(241, 29);
             this.checkBoxMarkerSmoothing.TabIndex = 3;
             this.checkBoxMarkerSmoothing.Text = "Smooth Marker Data";
             this.checkBoxMarkerSmoothing.UseVisualStyleBackColor = true;
@@ -295,9 +316,10 @@ namespace TouchlessDemo
             this.checkBoxMarkerHighlight.AutoSize = true;
             this.checkBoxMarkerHighlight.Checked = true;
             this.checkBoxMarkerHighlight.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxMarkerHighlight.Location = new System.Drawing.Point(5, 19);
+            this.checkBoxMarkerHighlight.Location = new System.Drawing.Point(10, 37);
+            this.checkBoxMarkerHighlight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBoxMarkerHighlight.Name = "checkBoxMarkerHighlight";
-            this.checkBoxMarkerHighlight.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxMarkerHighlight.Size = new System.Drawing.Size(201, 29);
             this.checkBoxMarkerHighlight.TabIndex = 2;
             this.checkBoxMarkerHighlight.Text = "Highlight Marker";
             this.checkBoxMarkerHighlight.UseVisualStyleBackColor = true;
@@ -306,18 +328,20 @@ namespace TouchlessDemo
             // labelMarkerData
             // 
             this.labelMarkerData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelMarkerData.Location = new System.Drawing.Point(7, 70);
+            this.labelMarkerData.Location = new System.Drawing.Point(14, 135);
+            this.labelMarkerData.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelMarkerData.Name = "labelMarkerData";
             this.labelMarkerData.ReadOnly = true;
-            this.labelMarkerData.Size = new System.Drawing.Size(291, 140);
+            this.labelMarkerData.Size = new System.Drawing.Size(578, 266);
             this.labelMarkerData.TabIndex = 1;
             this.labelMarkerData.Text = "";
             // 
             // buttonMarkerRemove
             // 
-            this.buttonMarkerRemove.Location = new System.Drawing.Point(155, 15);
+            this.buttonMarkerRemove.Location = new System.Drawing.Point(310, 29);
+            this.buttonMarkerRemove.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonMarkerRemove.Name = "buttonMarkerRemove";
-            this.buttonMarkerRemove.Size = new System.Drawing.Size(143, 23);
+            this.buttonMarkerRemove.Size = new System.Drawing.Size(286, 44);
             this.buttonMarkerRemove.TabIndex = 0;
             this.buttonMarkerRemove.Text = "Remove This Marker";
             this.buttonMarkerRemove.UseVisualStyleBackColor = true;
@@ -327,19 +351,21 @@ namespace TouchlessDemo
             // 
             this.comboBoxMarkers.Enabled = false;
             this.comboBoxMarkers.FormattingEnabled = true;
-            this.comboBoxMarkers.Location = new System.Drawing.Point(165, 19);
+            this.comboBoxMarkers.Location = new System.Drawing.Point(330, 37);
+            this.comboBoxMarkers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxMarkers.Name = "comboBoxMarkers";
-            this.comboBoxMarkers.Size = new System.Drawing.Size(148, 21);
+            this.comboBoxMarkers.Size = new System.Drawing.Size(292, 33);
             this.comboBoxMarkers.TabIndex = 22;
             this.comboBoxMarkers.Text = "Edit An Existing Marker";
-            this.comboBoxMarkers.SelectedIndexChanged += new System.EventHandler(this.comboBoxMarkers_SelectedIndexChanged);
             this.comboBoxMarkers.DropDown += new System.EventHandler(this.comboBoxMarkers_DropDown);
+            this.comboBoxMarkers.SelectedIndexChanged += new System.EventHandler(this.comboBoxMarkers_SelectedIndexChanged);
             // 
             // buttonMarkerAdd
             // 
-            this.buttonMarkerAdd.Location = new System.Drawing.Point(10, 17);
+            this.buttonMarkerAdd.Location = new System.Drawing.Point(20, 33);
+            this.buttonMarkerAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonMarkerAdd.Name = "buttonMarkerAdd";
-            this.buttonMarkerAdd.Size = new System.Drawing.Size(151, 23);
+            this.buttonMarkerAdd.Size = new System.Drawing.Size(302, 44);
             this.buttonMarkerAdd.TabIndex = 19;
             this.buttonMarkerAdd.Text = "Add A New Marker";
             this.buttonMarkerAdd.UseVisualStyleBackColor = true;
@@ -352,9 +378,11 @@ namespace TouchlessDemo
             this.groupBoxDemo.Controls.Add(this.buttonImageDemo);
             this.groupBoxDemo.Controls.Add(this.buttonSnakeDemo);
             this.groupBoxDemo.Controls.Add(this.buttonDrawDemo);
-            this.groupBoxDemo.Location = new System.Drawing.Point(12, 59);
+            this.groupBoxDemo.Location = new System.Drawing.Point(24, 113);
+            this.groupBoxDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBoxDemo.Name = "groupBoxDemo";
-            this.groupBoxDemo.Size = new System.Drawing.Size(320, 390);
+            this.groupBoxDemo.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBoxDemo.Size = new System.Drawing.Size(640, 750);
             this.groupBoxDemo.TabIndex = 26;
             this.groupBoxDemo.TabStop = false;
             this.groupBoxDemo.Text = "Demo Mode Instructions";
@@ -364,19 +392,21 @@ namespace TouchlessDemo
             this.labelDemoInstructions.BackColor = System.Drawing.SystemColors.Control;
             this.labelDemoInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelDemoInstructions.Enabled = false;
-            this.labelDemoInstructions.Location = new System.Drawing.Point(6, 108);
+            this.labelDemoInstructions.Location = new System.Drawing.Point(12, 208);
+            this.labelDemoInstructions.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelDemoInstructions.Name = "labelDemoInstructions";
             this.labelDemoInstructions.ReadOnly = true;
-            this.labelDemoInstructions.Size = new System.Drawing.Size(308, 276);
+            this.labelDemoInstructions.Size = new System.Drawing.Size(612, 527);
             this.labelDemoInstructions.TabIndex = 24;
             this.labelDemoInstructions.Text = "";
             // 
             // buttonDefendDemo
             // 
             this.buttonDefendDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonDefendDemo.Location = new System.Drawing.Point(164, 63);
+            this.buttonDefendDemo.Location = new System.Drawing.Point(328, 121);
+            this.buttonDefendDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonDefendDemo.Name = "buttonDefendDemo";
-            this.buttonDefendDemo.Size = new System.Drawing.Size(150, 38);
+            this.buttonDefendDemo.Size = new System.Drawing.Size(300, 73);
             this.buttonDefendDemo.TabIndex = 23;
             this.buttonDefendDemo.Text = "Start Defend Demo";
             this.buttonDefendDemo.UseVisualStyleBackColor = true;
@@ -385,9 +415,10 @@ namespace TouchlessDemo
             // buttonImageDemo
             // 
             this.buttonImageDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonImageDemo.Location = new System.Drawing.Point(164, 19);
+            this.buttonImageDemo.Location = new System.Drawing.Point(328, 37);
+            this.buttonImageDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonImageDemo.Name = "buttonImageDemo";
-            this.buttonImageDemo.Size = new System.Drawing.Size(150, 38);
+            this.buttonImageDemo.Size = new System.Drawing.Size(300, 73);
             this.buttonImageDemo.TabIndex = 22;
             this.buttonImageDemo.Text = "Start Image Demo";
             this.buttonImageDemo.UseVisualStyleBackColor = true;
@@ -396,9 +427,10 @@ namespace TouchlessDemo
             // buttonSnakeDemo
             // 
             this.buttonSnakeDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSnakeDemo.Location = new System.Drawing.Point(6, 63);
+            this.buttonSnakeDemo.Location = new System.Drawing.Point(12, 121);
+            this.buttonSnakeDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonSnakeDemo.Name = "buttonSnakeDemo";
-            this.buttonSnakeDemo.Size = new System.Drawing.Size(150, 38);
+            this.buttonSnakeDemo.Size = new System.Drawing.Size(300, 73);
             this.buttonSnakeDemo.TabIndex = 21;
             this.buttonSnakeDemo.Text = "Start Snake Demo";
             this.buttonSnakeDemo.UseVisualStyleBackColor = true;
@@ -407,9 +439,10 @@ namespace TouchlessDemo
             // buttonDrawDemo
             // 
             this.buttonDrawDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonDrawDemo.Location = new System.Drawing.Point(6, 19);
+            this.buttonDrawDemo.Location = new System.Drawing.Point(12, 37);
+            this.buttonDrawDemo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonDrawDemo.Name = "buttonDrawDemo";
-            this.buttonDrawDemo.Size = new System.Drawing.Size(150, 38);
+            this.buttonDrawDemo.Size = new System.Drawing.Size(300, 73);
             this.buttonDrawDemo.TabIndex = 21;
             this.buttonDrawDemo.Text = "Start Draw Demo";
             this.buttonDrawDemo.UseVisualStyleBackColor = true;
@@ -417,9 +450,10 @@ namespace TouchlessDemo
             // 
             // buttonHelp
             // 
-            this.buttonHelp.Location = new System.Drawing.Point(12, 455);
+            this.buttonHelp.Location = new System.Drawing.Point(24, 875);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(147, 23);
+            this.buttonHelp.Size = new System.Drawing.Size(294, 44);
             this.buttonHelp.TabIndex = 27;
             this.buttonHelp.Text = "Help!";
             this.buttonHelp.UseVisualStyleBackColor = true;
@@ -429,9 +463,10 @@ namespace TouchlessDemo
             // 
             this.buttonBack.Enabled = false;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBack.Location = new System.Drawing.Point(176, 455);
+            this.buttonBack.Location = new System.Drawing.Point(352, 875);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 37);
+            this.buttonBack.Size = new System.Drawing.Size(150, 71);
             this.buttonBack.TabIndex = 28;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -441,9 +476,10 @@ namespace TouchlessDemo
             // 
             this.buttonNext.Enabled = false;
             this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonNext.Location = new System.Drawing.Point(257, 455);
+            this.buttonNext.Location = new System.Drawing.Point(514, 875);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 37);
+            this.buttonNext.Size = new System.Drawing.Size(150, 71);
             this.buttonNext.TabIndex = 29;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -452,9 +488,10 @@ namespace TouchlessDemo
             // linkLabelHomepage
             // 
             this.linkLabelHomepage.AutoSize = true;
-            this.linkLabelHomepage.Location = new System.Drawing.Point(12, 479);
+            this.linkLabelHomepage.Location = new System.Drawing.Point(24, 921);
+            this.linkLabelHomepage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.linkLabelHomepage.Name = "linkLabelHomepage";
-            this.linkLabelHomepage.Size = new System.Drawing.Size(150, 13);
+            this.linkLabelHomepage.Size = new System.Drawing.Size(294, 25);
             this.linkLabelHomepage.TabIndex = 30;
             this.linkLabelHomepage.TabStop = true;
             this.linkLabelHomepage.Text = "www.codeplex.com/touchless";
@@ -462,9 +499,9 @@ namespace TouchlessDemo
             // 
             // TouchlessDemo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 503);
+            this.ClientSize = new System.Drawing.Size(1982, 967);
             this.Controls.Add(this.linkLabelHomepage);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonBack);
@@ -477,11 +514,12 @@ namespace TouchlessDemo
             this.Controls.Add(this.groupBoxCamera);
             this.Controls.Add(this.groupBoxDemo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "TouchlessDemo";
             this.Text = "Touchless Demo";
-            this.Load += new System.EventHandler(this.TouchlessDemo_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TouchlessDemo_FormClosing);
+            this.Load += new System.EventHandler(this.TouchlessDemo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisplay)).EndInit();
             this.groupBoxCamera.ResumeLayout(false);
             this.groupBoxCameraInfo.ResumeLayout(false);
