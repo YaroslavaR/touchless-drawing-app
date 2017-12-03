@@ -369,6 +369,7 @@ namespace TouchlessDemo
                 buttonSaveImage.Visible = true;
                 buttonLoadImage.Visible = true;
                 buttonDrawDemo.Text = "Stop Drawing";
+                buttonDrawDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(93)))), ((int)(((byte)(92)))));
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = false;
                 labelDemoInstructions.Enabled = true;
                 labelDemoInstructions.Text = "Drawing Demo Instructions:\n\n"
@@ -397,6 +398,7 @@ namespace TouchlessDemo
                 pictureBoxDisplay.Image = canvas;*/
                 _drawDemo = null;
                 buttonDrawDemo.Text = "Start Drawing";
+                buttonDrawDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(232)))), ((int)(((byte)(134)))));
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = true;
                 labelDemoInstructions.Enabled = false;
                 labelDemoInstructions.Text = "";
@@ -813,7 +815,7 @@ namespace TouchlessDemo
             DateTime currentDate = DateTime.Now;
             DateTime dateOnly = currentDate.Date;
             System.IO.DirectoryInfo di = System.IO.Directory.CreateDirectory(path);
-            Debug.WriteLine(dateOnly.ToString("ddMMyyyy"));
+            //Debug.WriteLine(dateOnly.ToString("ddMMyyyy"));
             System.IO.DirectoryInfo di2 = System.IO.Directory.CreateDirectory(path + dateOnly.ToString("ddMMyyyy"));
 
             camera_screen.Save(path + dateOnly.ToString("ddMMyyyy") + "\\" + currentDate.ToString("HHmmss") + ".jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
