@@ -27,9 +27,13 @@ namespace TouchlessDemo
     {
         #region Touchless Demo Management
 
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrawingForm));
+        Bitmap _loadedBitmap = null;
+
         public DrawingForm()
         {
             InitializeComponent();
+
             //_touchlessMgr = mgr;
         }
 
@@ -84,6 +88,7 @@ namespace TouchlessDemo
             groupBoxCamera.Visible = radioButtonCamera.Checked;
             groupBoxMarkers.Visible = radioButtonMarkers.Checked;
             groupBoxDemo.Visible = radioButtonDemo.Checked;
+            buttonLoadImage.Visible = radioButtonDemo.Checked;
             _fChangingMode = false;
 
             // Set the back and next buttons enabled state
@@ -102,6 +107,8 @@ namespace TouchlessDemo
                 if (comboBoxMarkers.Items.Count != 0)
                     radioButtonDemo.Visible = true;
                 buttonDrawDemo.Visible = false;
+                checkBoxUseCamera.Visible = false;
+                checkBoxUseLoadImage.Visible = false;
                 pictureBoxDisplay.MouseDown += new MouseEventHandler(pictureBoxDisplay_MouseDown);
                 pictureBoxDisplay.MouseMove += new MouseEventHandler(pictureBoxDisplay_MouseMove);
                 pictureBoxDisplay.MouseUp += new MouseEventHandler(pictureBoxDisplay_MouseUp);
@@ -119,6 +126,9 @@ namespace TouchlessDemo
                 radioButtonDemo.Visible = false;
                 radioButtonMarkers.Visible = true;
                 buttonDrawDemo.Visible = true;
+                checkBoxUseCamera.Visible = true;
+                if (_loadedBitmap != null)
+                    checkBoxUseLoadImage.Visible = true;
                 buttonMarkerAdd.Visible = false;
                 buttonMarkerRemove.Visible = false;
                 comboBoxMarkers.Visible = false;
@@ -197,15 +207,14 @@ namespace TouchlessDemo
             }
             else if (radioButtonDemo.Checked)
             {
-                String demoHelp = "Play with the drawing, snake, image, and defend demos.\n\n"
-                    + "Our project is open-source SDK with an active community.\n"
-                    + "Contribute your own demos or applications to our community.\n"
-                    + "Make a game, you're not limited to Windows Forms Apps.\n"
-                    + "Figure out a neat way to click with a marker.\n"
-                    + "Make a mouse or joypad emulator for existing games and apps.\n"
-                    + "Small demos can take less than one hour to write.\n\n"
-                    + "Visit our project homepage at http://www.codeplex.com/touchless\n"
-                    + "You can also contact: Michael.Wasserman@microsoft.com";
+                String demoHelp = "Play with our drawing application!\n\n"
+                    + "Move the marker selected in the Markers zone to draw on the surface.\n"
+                    + "You may select to draw on top of the web cam image, or on a white surface.\n"
+                    + "Moving the marker closer to the camera makes the line drawn thicker.\n"
+                    + "All of the images from the camera are saved to C:\\DrawingApplication upon clicking the Save button.\n"
+                    + "Stopping the drawing stops marker tracking, but does not erase current image.\n"
+                    + "Clearing the canvas does not stop tracking the markers, but erases current image.\n\n"
+                    + "The application uses Touchless SDK available at http://www.codeplex.com/touchless\n";
                 MessageBox.Show(demoHelp, "Demo Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -244,7 +253,21 @@ namespace TouchlessDemo
             {
                 // Draw the latest image from the active camera
                 //_latestFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
-                e.Graphics.DrawImage(_latestFrame, 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
+                if (!radioButtonDemo.Checked || checkBoxUseCamera.Checked)
+                {
+                    e.Graphics.DrawImage(_latestFrame, 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
+                }
+                else
+                {
+                    //Bitmap image1 = (Bitmap)Image.FromFile(@"\\Mac\Home\classes\interaction_architecture\Touchless_Source_Code\Touchless\Samples\TouchlessDemo\white_bmp.bmp");
+                    Bitmap image1 = (Bitmap)((System.Drawing.Image)(resources.GetObject("white_bmp")));
+                    if (_loadedBitmap != null && checkBoxUseLoadImage.Checked)
+                    {
+                        e.Graphics.DrawImage(new Bitmap(_loadedBitmap, pictureBoxDisplay.Width, pictureBoxDisplay.Height), 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
+                    }
+                    else e.Graphics.DrawImage(new Bitmap(image1, pictureBoxDisplay.Width, pictureBoxDisplay.Height), 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
+                }
+                
 
                 // Draw the selection adornment
                 if (_drawSelectionAdornment)
@@ -287,7 +310,6 @@ namespace TouchlessDemo
             if (!_fAddingMarker)
             {
                 // Cause display update
-
                 _latestFrame = args.Image;
                 _latestFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 pictureBoxDisplay.Invalidate();
@@ -344,6 +366,7 @@ namespace TouchlessDemo
             {
                 _drawDemo = new DrawDemo(_touchlessMgr, pictureBoxDisplay.Bounds);
                 buttonSaveImage.Visible = true;
+                buttonLoadImage.Visible = true;
                 buttonDrawDemo.Text = "Stop Drawing";
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = false;
                 labelDemoInstructions.Enabled = true;
@@ -362,13 +385,23 @@ namespace TouchlessDemo
             }
             else
             {
+                //Bitmap camera_screen = _touchlessMgr.CurrentCamera.GetCurrentImage();
+                //Bitmap canvas = _drawDemo.Canvas;
                 _drawDemo.Dispose();
+
+                /*using (Graphics grfx = Graphics.FromImage(camera_screen))
+                {
+                    grfx.DrawImage(canvas, 0, 0);
+                }
+                pictureBoxDisplay.Image = canvas;*/
                 _drawDemo = null;
                 buttonDrawDemo.Text = "Start Drawing";
                 buttonSnakeDemo.Enabled = buttonImageDemo.Enabled = buttonDefendDemo.Enabled = true;
                 labelDemoInstructions.Enabled = false;
                 labelDemoInstructions.Text = "";
                 buttonSaveImage.Visible = false;
+                buttonLoadImage.Visible = true;
+
             }
         }
 
@@ -761,6 +794,15 @@ namespace TouchlessDemo
 
             camera_screen.Save(path + dateOnly.ToString("ddMMyyyy") + "\\" + currentDate.ToString("HHmmss") + ".jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
             System.Windows.Forms.MessageBox.Show("Your image has been saved as " + path + dateOnly.ToString("ddMMyyyy") + "\\" + currentDate.ToString("HHmmss") + ".jpeg");
+        }
+
+        private void buttonLoadImage_Click(object sender, EventArgs e)
+        {
+           if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                _loadedBitmap = (Bitmap)Image.FromFile(openFileDialog1.FileName);
+                checkBoxUseLoadImage.Visible = true;
+            }
         }
     }
 }

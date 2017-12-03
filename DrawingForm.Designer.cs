@@ -64,6 +64,10 @@ namespace TouchlessDemo
             this.groupBoxMarkers = new System.Windows.Forms.GroupBox();
             this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
             this.buttonSaveImage = new System.Windows.Forms.Button();
+            this.checkBoxUseCamera = new System.Windows.Forms.CheckBox();
+            this.buttonLoadImage = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.checkBoxUseLoadImage = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDisplay)).BeginInit();
             this.groupBoxDemo.SuspendLayout();
             this.groupBoxCameraInfo.SuspendLayout();
@@ -404,7 +408,7 @@ namespace TouchlessDemo
             this.buttonMarkerAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(232)))), ((int)(((byte)(134)))));
             this.buttonMarkerAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMarkerAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonMarkerAdd.Location = new System.Drawing.Point(466, 41);
+            this.buttonMarkerAdd.Location = new System.Drawing.Point(465, 41);
             this.buttonMarkerAdd.Margin = new System.Windows.Forms.Padding(6);
             this.buttonMarkerAdd.Name = "buttonMarkerAdd";
             this.buttonMarkerAdd.Size = new System.Drawing.Size(337, 71);
@@ -560,6 +564,52 @@ namespace TouchlessDemo
             this.buttonSaveImage.Visible = false;
             this.buttonSaveImage.Click += new System.EventHandler(this.buttonSaveImage_Click);
             // 
+            // checkBoxUseCamera
+            // 
+            this.checkBoxUseCamera.AutoSize = true;
+            this.checkBoxUseCamera.Checked = true;
+            this.checkBoxUseCamera.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxUseCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.checkBoxUseCamera.ForeColor = System.Drawing.Color.White;
+            this.checkBoxUseCamera.Location = new System.Drawing.Point(1051, 43);
+            this.checkBoxUseCamera.Name = "checkBoxUseCamera";
+            this.checkBoxUseCamera.Size = new System.Drawing.Size(357, 40);
+            this.checkBoxUseCamera.TabIndex = 34;
+            this.checkBoxUseCamera.Text = "Use image from camera";
+            this.checkBoxUseCamera.UseVisualStyleBackColor = true;
+            this.checkBoxUseCamera.Visible = false;
+            // 
+            // buttonLoadImage
+            // 
+            this.buttonLoadImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(123)))), ((int)(((byte)(232)))));
+            this.buttonLoadImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold);
+            this.buttonLoadImage.ForeColor = System.Drawing.Color.White;
+            this.buttonLoadImage.Location = new System.Drawing.Point(864, 41);
+            this.buttonLoadImage.Name = "buttonLoadImage";
+            this.buttonLoadImage.Size = new System.Drawing.Size(167, 71);
+            this.buttonLoadImage.TabIndex = 35;
+            this.buttonLoadImage.Text = "Load";
+            this.buttonLoadImage.UseVisualStyleBackColor = false;
+            this.buttonLoadImage.Visible = false;
+            this.buttonLoadImage.Click += new System.EventHandler(this.buttonLoadImage_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // checkBoxUseLoadImage
+            // 
+            this.checkBoxUseLoadImage.AutoSize = true;
+            this.checkBoxUseLoadImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxUseLoadImage.ForeColor = System.Drawing.Color.White;
+            this.checkBoxUseLoadImage.Location = new System.Drawing.Point(1051, 79);
+            this.checkBoxUseLoadImage.Name = "checkBoxUseLoadImage";
+            this.checkBoxUseLoadImage.Size = new System.Drawing.Size(282, 37);
+            this.checkBoxUseLoadImage.TabIndex = 36;
+            this.checkBoxUseLoadImage.Text = "Use loaded image";
+            this.checkBoxUseLoadImage.UseVisualStyleBackColor = true;
+            this.checkBoxUseLoadImage.Visible = false;
+            // 
             // DrawingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -567,6 +617,9 @@ namespace TouchlessDemo
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(203)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(2104, 1438);
+            this.Controls.Add(this.checkBoxUseLoadImage);
+            this.Controls.Add(this.buttonLoadImage);
+            this.Controls.Add(this.checkBoxUseCamera);
             this.Controls.Add(this.buttonSaveImage);
             this.Controls.Add(this.pictureBoxDisplay);
             this.Controls.Add(this.pictureBoxBackground);
@@ -644,6 +697,10 @@ namespace TouchlessDemo
         private System.Windows.Forms.GroupBox groupBoxMarkers;
         private System.Windows.Forms.PictureBox pictureBoxBackground;
         private System.Windows.Forms.Button buttonSaveImage;
+        private System.Windows.Forms.CheckBox checkBoxUseCamera;
+        private System.Windows.Forms.Button buttonLoadImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.CheckBox checkBoxUseLoadImage;
     }
 }
 
