@@ -243,12 +243,14 @@ namespace TouchlessDemo
             if (_latestFrame != null)
             {
                 // Draw the latest image from the active camera
+                //_latestFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 e.Graphics.DrawImage(_latestFrame, 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
 
                 // Draw the selection adornment
                 if (_drawSelectionAdornment)
                 {
                     Pen pen = new Pen(Brushes.Red, 1);
+                    //_latestFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
                     e.Graphics.DrawEllipse(pen, _markerCenter.X - _markerRadius, _markerCenter.Y - _markerRadius, 2 * _markerRadius, 2 * _markerRadius);
                 }
 
@@ -285,7 +287,9 @@ namespace TouchlessDemo
             if (!_fAddingMarker)
             {
                 // Cause display update
+
                 _latestFrame = args.Image;
+                _latestFrame.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 pictureBoxDisplay.Invalidate();
             }
         }
@@ -590,6 +594,7 @@ namespace TouchlessDemo
             // If we are adding a marker - get the marker radius on mouse up, add the marker
             if (_fAddingMarker)
             {
+                //_latestFrame.RotateFlip(RotateFlipType.Rotate180FlipY);
                 int dx = e.X - _markerCenter.X;
                 int dy = e.Y - _markerCenter.Y;
                 _markerRadius = (float)Math.Sqrt(dx * dx + dy * dy);
@@ -606,7 +611,12 @@ namespace TouchlessDemo
                 buttonMarkerAdd.Text = "Add A New Marker";
                 _markerCenter = new Point();
                 _drawSelectionAdornment = false;
+
                 pictureBoxDisplay.Image = new Bitmap(pictureBoxDisplay.Width, pictureBoxDisplay.Height);
+                //Image img = pictureBoxDisplay.Image;
+                //img.RotateFlip(RotateFlipType.Rotate180FlipY);//.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                //pictureBoxDisplay.Image = img;
+                //pictureBoxDisplay.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
 
                 // Enable the demo and marker editing
                 radioButtonDemo.Visible = true;

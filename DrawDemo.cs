@@ -26,8 +26,12 @@ namespace TouchlessDemo
 
             // Initialize the canvas for drawing and its graphics object
             _canvas = new Bitmap(_tlmgr.CurrentCamera.CaptureWidth, _tlmgr.CurrentCamera.CaptureHeight);
+            _canvas.RotateFlip(RotateFlipType.Rotate180FlipNone);
             _canvasGFX = Graphics.FromImage(_canvas);
             _canvasGFX.FillRectangle(new SolidBrush(Color.FromArgb(64, 255, 255, 255)), 0, 0, _canvas.Width, _canvas.Height);
+            _canvasGFX.ScaleTransform(-1, 1);
+            _canvasGFX.TranslateTransform(-_canvas.Width, 0);
+
 
             // Initialize the points and pen used for drawing segments
             _pen = new Pen(Color.Black);
@@ -49,6 +53,7 @@ namespace TouchlessDemo
         public void drawCanvas(Graphics gfx)
         {
             // Draw our canvas with all the segments
+            
             gfx.DrawImage(_canvas, 0, 0, _displayWidth, _displayHeight);
         }
 
@@ -59,6 +64,7 @@ namespace TouchlessDemo
                 return;
 
             // Draw a segment on our canvas between the marker and where it was previously found
+            
             MarkerEventData data = args.EventData;
             _pen.Color = Color.FromArgb( 128, data.ColorAvg.R, data.ColorAvg.G, data.ColorAvg.B);
             _pen.Width = data.Area / 60;
@@ -66,6 +72,7 @@ namespace TouchlessDemo
             _p1.Y = (data.Y - data.DY);
             _p2.X = data.X;
             _p2.Y = data.Y;
+
             _canvasGFX.DrawLine(_pen, _p1, _p2);
         }
 

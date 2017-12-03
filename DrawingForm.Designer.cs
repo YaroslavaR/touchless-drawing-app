@@ -212,7 +212,7 @@ namespace TouchlessDemo
             this.buttonDrawDemo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(232)))), ((int)(((byte)(134)))));
             this.buttonDrawDemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDrawDemo.ForeColor = System.Drawing.Color.White;
-            this.buttonDrawDemo.Location = new System.Drawing.Point(346, 43);
+            this.buttonDrawDemo.Location = new System.Drawing.Point(370, 43);
             this.buttonDrawDemo.Margin = new System.Windows.Forms.Padding(6);
             this.buttonDrawDemo.Name = "buttonDrawDemo";
             this.buttonDrawDemo.Size = new System.Drawing.Size(300, 71);
