@@ -29,6 +29,7 @@ namespace TouchlessDemo
 
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrawingForm));
         Bitmap _loadedBitmap = null;
+        Bitmap _white = null;
 
         public DrawingForm()
         {
@@ -260,12 +261,12 @@ namespace TouchlessDemo
                 else
                 {
                     //Bitmap image1 = (Bitmap)Image.FromFile(@"\\Mac\Home\classes\interaction_architecture\Touchless_Source_Code\Touchless\Samples\TouchlessDemo\white_bmp.bmp");
-                    Bitmap image1 = (Bitmap)((System.Drawing.Image)(resources.GetObject("white_bmp")));
+                    _white = (Bitmap)((System.Drawing.Image)(resources.GetObject("white_bmp")));
                     if (_loadedBitmap != null && checkBoxUseLoadImage.Checked)
                     {
                         e.Graphics.DrawImage(new Bitmap(_loadedBitmap, pictureBoxDisplay.Width, pictureBoxDisplay.Height), 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
                     }
-                    else e.Graphics.DrawImage(new Bitmap(image1, pictureBoxDisplay.Width, pictureBoxDisplay.Height), 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
+                    else e.Graphics.DrawImage(new Bitmap(_white, pictureBoxDisplay.Width, pictureBoxDisplay.Height), 0, 0, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
                 }
                 
 
@@ -776,7 +777,30 @@ namespace TouchlessDemo
 
         private void buttonSaveImage_Click(object sender, EventArgs e)
         {
-            Bitmap camera_screen = _touchlessMgr.CurrentCamera.GetCurrentImage();
+            Bitmap camera_screen = null;
+            if (checkBoxUseCamera.Checked)
+            {
+                camera_screen = _touchlessMgr.CurrentCamera.GetCurrentImage();
+            }
+            else if (checkBoxUseLoadImage.Checked)
+            {
+                camera_screen = new Bitmap(_loadedBitmap, pictureBoxDisplay.Width, pictureBoxDisplay.Height);
+            }
+            else
+            {
+                Bitmap originalBmp = (Bitmap)((System.Drawing.Image)(resources.GetObject("white_bmp")));
+
+                camera_screen = new Bitmap(originalBmp.Width, originalBmp.Height);
+                using (Graphics g = Graphics.FromImage(camera_screen))
+                {
+                    // Draw the original bitmap onto the graphics of the new bitmap
+                    g.DrawImage(originalBmp, 0, 0);
+                    
+                }
+
+            }
+
+
             Bitmap canvas = _drawDemo.Canvas;
 
             using (Graphics grfx = Graphics.FromImage(camera_screen))
