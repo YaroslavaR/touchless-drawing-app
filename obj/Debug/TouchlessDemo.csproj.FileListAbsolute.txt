@@ -1,9 +1,0 @@
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\obj\Debug\TouchlessDemo.DrawingForm.resources
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\obj\Debug\TouchlessDemo.TouchlessDemo.resources
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\obj\Debug\TouchlessDemo.Properties.Resources.resources
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\obj\Debug\TouchlessDemo.csproj.GenerateResource.Cache
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\bin\Debug\Image.gif
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\bin\Debug\TouchlessDemo.exe
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\bin\Debug\TouchlessDemo.pdb
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\obj\Debug\TouchlessDemo.exe
-C:\Users\RaulEstrada\Desktop\draw\touchless-drawing-app\obj\Debug\TouchlessDemo.pdb
