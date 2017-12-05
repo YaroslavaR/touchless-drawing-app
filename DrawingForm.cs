@@ -554,9 +554,11 @@ namespace TouchlessDemo
                 comboBoxMarkers.Text = "Edit An Existing Marker";
                 groupBoxMarkerControl.Enabled = false;
                 groupBoxMarkerControl.Text = "No Marker Selected";
+                buttonMarkerRemove.Enabled = false;
                 return;
             }
 
+            buttonMarkerRemove.Enabled = true;
             _markerSelected = (Marker)comboBoxMarkers.SelectedItem;
             _markerSelected.OnChange += new EventHandler<MarkerEventArgs>(OnSelectedMarkerUpdate);
 
@@ -605,6 +607,7 @@ namespace TouchlessDemo
                 radioButtonDemo.Visible = false;
                 radioButtonDemo.Enabled = false;
                 comboBoxMarkers.Enabled = false;
+                buttonMarkerRemove.Enabled = false;
             }
         }
 
@@ -824,6 +827,7 @@ namespace TouchlessDemo
 
         private void buttonLoadImage_Click(object sender, EventArgs e)
         {
+            openFileDialog1.InitialDirectory = "C:\\DrawingApplication\\imgs";
            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 _loadedBitmap = (Bitmap)Image.FromFile(openFileDialog1.FileName);
