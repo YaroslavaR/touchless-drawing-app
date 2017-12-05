@@ -68,7 +68,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="TouchlessLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Release\TouchlessLib.dll</HintPath>
+      <HintPath>.\TouchlessLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
