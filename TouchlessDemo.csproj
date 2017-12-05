@@ -122,6 +122,7 @@
     <Content Include="Image.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\white_bmp.bmp" />
     <Content Include="white_bmp.bmp" />
   </ItemGroup>
   <ItemGroup>
